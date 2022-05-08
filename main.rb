@@ -9,15 +9,15 @@ class Draw
     @y = y
   end
 
-  def paint
+  def paint(color, value)
     pass
   end
 
-  def button(foreground_color, dark_mode)
+  def button(foreground_color, dark_mode = false)
     if dark_mode
-      paint(label_text, x, y, foreground_color - 10, '#111111')
+      paint(foreground_color - 10, '#111111')
     else
-      paint(label_text, x, y, foreground_color + 10, '#E0E0E0')
+      paint(foreground_color + 10, '#E0E0E0')
     end
   end
 end
