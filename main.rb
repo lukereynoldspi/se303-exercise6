@@ -2,6 +2,9 @@ class Draw
   attr_reader :label
   attr_reader :x
   attr_reader :y
+  COLOR_SHIFT = 10
+  DARK_MODE = '#111111'
+  LIGHT_MODE = '#E0E0E0'
 
   def initialize(label, x, y)
     @label = label
@@ -15,9 +18,9 @@ class Draw
 
   def button(foreground_color, dark_mode = false)
     if dark_mode
-      paint(foreground_color - 10, '#111111')
+      paint(foreground_color - COLOR_SHIFT, DARK_MODE)
     else
-      paint(foreground_color + 10, '#E0E0E0')
+      paint(foreground_color + COLOR_SHIFT, LIGHT_MODE)
     end
   end
 end
